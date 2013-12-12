@@ -1,4 +1,4 @@
 aungular-test
 =============
 
-my practice repository for angularJS 
+This is a my practice repository for AngularJS 

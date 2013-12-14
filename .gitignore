@@ -1,3 +1,8 @@
+# all backups
+*~
+*.swp
+*.bak
+
 # Bootstrap
 app/bootstrap*
 

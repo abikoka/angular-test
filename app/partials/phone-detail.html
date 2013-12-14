@@ -1,0 +1,120 @@
+<div ng-controller="Ctrl" class="ng-scope">
+<img ng-src="{{phone.images[0]}}" class="phone">
+
+<h1>{{phone.name}}</h1>
+
+<p>{{phone.description}}</p>
+
+<ul class="phone-thumbs">
+  <li ng-repeat="img in phone.images">
+    <img ng-src="{{img}}">
+  </li>
+</ul>
+
+<div>
+  <button id="BUTTON_LANG_EN" class="btn ng-scope" ng-click="changeLanguage('en')" translate="BUTTON_LANG_EN">english</button>
+  <button id="BUTTON_LANG_JP"  class="btn ng-scope" ng-click="changeLanguage('jp')" translate="BUTTON_LANG_JP">Japanese</button>
+</div>
+
+<ul class="specs">
+  <li>
+    <span translate="SPEC_AVAILABILITY_AND_NETWORKS">Availability and Networks</span>
+    <dl>
+      <dt translate="SPEC_AVAILABILITY">Availability</dt>
+      <dd ng-repeat="availability in phone.availability">{{availability}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span translate="SPEC_BATTERY">Battery</span>
+    <dl>
+      <dt translate="SPEC_BATTERY_TYPE">Type</dt>
+      <dd>{{phone.battery.type}}</dd>
+      <dt translate="SPEC_BATTERY_TALK_TIME">Talk Time</dt>
+      <dd>{{phone.battery.talkTime}}</dd>
+      <dt translate="SPEC_BATTERY_STANDBY_TIME_MAX">Standby time (max)</dt>
+      <dd>{{phone.battery.standbyTime}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span translate="SPEC_STORAGE_AND_MEMORY">Storage and Memory</span>
+    <dl>
+      <dt translate="SPEC_STORAGE_AND_MEMORY_RAM">RAM</dt>
+      <dd>{{phone.storage.ram}}</dd>
+      <dt translate="SPEC_STORAGE_AND_MEMORY_INTERNAL_STORAGE">Internal Storage</dt>
+      <dd>{{phone.storage.flash}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span translate="SPEC_CONNECTIVITY">Connectivity</span>
+    <dl>
+      <dt translate="SPEC_CONNECTIVITY_NETWORK_SUPPORT">Network Support</dt>
+      <dd>{{phone.connectivity.cell}}</dd>
+      <dt translate="SPEC_CONNECTIVITY_WIFI">WiFi</dt>
+      <dd>{{phone.connectivity.wifi}}</dd>
+      <dt translate="SPEC_CONNECTIVITY_BLUETOOTH">Bluetooth</dt>
+      <dd>{{phone.connectivity.bluetooth}}</dd>
+      <dt translate="SPEC_CONNECTIVITY_INFRARED">Infrared</dt>
+      <dd>{{phone.connectivity.infrared | checkmark}}</dd>
+      <dt translate="SPEC_CONNECTIVITY_GPS">GPS</dt>
+      <dd>{{phone.connectivity.gps | checkmark}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span translate="SPEC_ANDROID">Android</span>
+    <dl>
+      <dt translate="SPEC_ANDROID_OS_VERSION">OS Version</dt>
+      <dd>{{phone.android.os}}</dd>
+      <dt translate="SPEC_ANDROID_UI">UI</dt>
+      <dd>{{phone.android.ui}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span translate="SPEC_SIZE_AND_WEIGHT">Size and Weight</span>
+    <dl>
+      <dt translate="SPEC_SIZE_AND_WEIGHT_DIMENSIONS">Dimensions</dt>
+      <dd ng-repeat="dim in phone.sizeAndWeight.dimensions">{{dim}}</dd>
+      <dt translate="SPEC_SIZE_AND_WEIGHT_WEIGHT">Weight</dt>
+      <dd>{{phone.sizeAndWeight.weight}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span translate="SPEC_DISPLAY">Display</span>
+    <dl>
+      <dt translate="SPEC_DISPLAY_SCREEN_SIZE">Screen size</dt>
+      <dd>{{phone.display.screenSize}}</dd>
+      <dt translate="SPEC_DISPLAY_SCREEN_RESOLUTION">Screen resolution</dt>
+      <dd>{{phone.display.screenResolution}}</dd>
+      <dt translate="SPEC_DISPLAY_TOUCH_SCREEN">Touch screen</dt>
+      <dd>{{phone.display.touchScreen | checkmark}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span translate="SPEC_HARDWARE">Hardware</span>
+    <dl>
+      <dt translate="SPEC_HARDWARE_CPU">CPU</dt>
+      <dd>{{phone.hardware.cpu}}</dd>
+      <dt translate="SPEC_HARDWARE_USB">USB</dt>
+      <dd>{{phone.hardware.usb}}</dd>
+      <dt translate="SPEC_HARDWARE_AUDIO_HEADPHONE_JACK">Audio / headphone jack</dt>
+      <dd>{{phone.hardware.audioJack}}</dd>
+      <dt translate="SPEC_HARDWARE_FM_RADIO">FM Radio</dt>
+      <dd>{{phone.hardware.fmRadio | checkmark}}</dd>
+      <dt translate="SPEC_HARDWARE_ACCELEROMETER">Accelerometer</dt>
+      <dd>{{phone.hardware.accelerometer | checkmark}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span translate="SPEC_CAMERA">Camera</span>
+    <dl>
+      <dt translate="SPEC_CAMERA_PRIMARY">Primary</dt>
+      <dd>{{phone.camera.primary}}</dd>
+      <dt translate="SPEC_CAMERA_FEATURES">Features</dt>
+      <dd>{{phone.camera.features.join(', ')}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span translate="SPEC_ADDITIONAL_FEATURES">Additional Features</span>
+    <dd>{{phone.additionalFeatures}}</dd>
+  </li>
+</ul>
+</div>
